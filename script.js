@@ -1,3 +1,22 @@
+// ===== DARK MODE TOGGLE =====
+const themeToggle = document.getElementById('themeToggle');
+const root = document.documentElement;
+let currentTheme = 'light';
+
+function applyTheme(theme) {
+  currentTheme = theme;
+  if (theme === 'dark') root.setAttribute('data-theme', 'dark');
+  else root.removeAttribute('data-theme');
+}
+
+// Default to system preference, no localStorage (per artifact rules, but this is a static site so we can use it safely outside artifacts)
+const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+applyTheme(prefersDark ? 'dark' : 'light');
+
+themeToggle.addEventListener('click', () => {
+  applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
+});
+
 // ===== CUSTOM CURSOR =====
 const cursor = document.getElementById('cursor');
 const cursorFollower = document.getElementById('cursorFollower');
