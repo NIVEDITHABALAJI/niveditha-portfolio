@@ -3,7 +3,7 @@
 A creative, pastel-aesthetic personal portfolio built from scratch with vanilla HTML, CSS & JavaScript — showcasing my work as a Full Stack Developer.
 
 ### 🔗 Live Demo
-[View Live Portfolio](#) <!-- replace # with your Vercel link after deploying -->
+[View Live Portfolio](https://nivedithabalaji-portfolio.vercel.app/) 
 
 ---
 
