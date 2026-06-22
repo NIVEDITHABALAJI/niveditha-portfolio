@@ -50,12 +50,14 @@
       <a href="#certifications" class="nav-link" data-page="certifications">Certs</a>
       <a href="#contact" class="nav-link" data-page="contact">Contact</a>
     </div>
-    <button class="hamburger" id="hamburger">
-      <span></span><span></span><span></span>
-    </button>
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-      <span class="toggle-knob"></span>
-    </button>
+    <div class="nav-right">
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <span class="toggle-knob"></span>
+      </button>
+    </div>
   </nav>
 
   <!-- MOBILE MENU -->
@@ -67,6 +69,12 @@
     <a href="#projects" class="mobile-link">Projects</a>
     <a href="#certifications" class="mobile-link">Certifications</a>
     <a href="#contact" class="mobile-link">Contact</a>
+    <div class="mobile-theme-row">
+      <span class="mobile-theme-label">Dark Mode</span>
+      <button class="theme-toggle theme-toggle-mobile" id="themeToggleMobile" aria-label="Toggle dark mode">
+        <span class="toggle-knob"></span>
+      </button>
+    </div>
   </div>
 
   <!-- ===== HOME ===== -->

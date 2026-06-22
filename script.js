@@ -1,5 +1,6 @@
 // ===== DARK MODE TOGGLE =====
 const themeToggle = document.getElementById('themeToggle');
+const themeToggleMobile = document.getElementById('themeToggleMobile');
 const root = document.documentElement;
 let currentTheme = 'light';
 
@@ -9,13 +10,11 @@ function applyTheme(theme) {
   else root.removeAttribute('data-theme');
 }
 
-// Default to system preference, no localStorage (per artifact rules, but this is a static site so we can use it safely outside artifacts)
 const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 applyTheme(prefersDark ? 'dark' : 'light');
 
-themeToggle.addEventListener('click', () => {
-  applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
-});
+themeToggle.addEventListener('click', () => applyTheme(currentTheme === 'dark' ? 'light' : 'dark'));
+themeToggleMobile.addEventListener('click', () => applyTheme(currentTheme === 'dark' ? 'light' : 'dark'));
 
 // ===== CUSTOM CURSOR =====
 const cursor = document.getElementById('cursor');
