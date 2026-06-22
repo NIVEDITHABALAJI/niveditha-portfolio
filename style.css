@@ -747,3 +747,87 @@ body:has(a:hover) .cursor-follower { transform: translate(-50%,-50%) scale(1.4);
 }
 [data-theme="dark"] .theme-toggle { background: var(--lavender-deep); border-color: rgba(197,174,232,0.3); }
 [data-theme="dark"] .toggle-knob { transform: translateX(24px); background: linear-gradient(135deg, var(--mint), var(--sky-deep)); }
+
+
+/* ===== NAV RIGHT GROUP ===== */
+.nav-right { display: flex; align-items: center; gap: 8px; }
+.hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+.hamburger span { display: block; width: 24px; height: 2px; background: var(--text-primary); border-radius: 2px; transition: 0.18s ease; }
+
+/* ===== MOBILE MENU ===== */
+.mobile-menu { display: none; flex-direction: column; gap: 8px; position: fixed; top: 64px; left: 0; right: 0; z-index: 999; background: rgba(253,246,240,0.97); backdrop-filter: blur(16px); padding: 20px 5%; border-bottom: 1px solid rgba(197,174,232,0.2); }
+.mobile-menu.open { display: flex; }
+.mobile-link { font-size: 1rem; font-weight: 500; color: var(--text-secondary); padding: 12px 0; border-bottom: 1px solid rgba(197,174,232,0.15); cursor: pointer; }
+.mobile-theme-row { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; border-top: 1px solid rgba(197,174,232,0.15); margin-top: 4px; }
+.mobile-theme-label { font-size: 0.9rem; font-weight: 500; color: var(--text-secondary); }
+.theme-toggle-mobile { cursor: pointer; margin-left: 0; }
+[data-theme="dark"] .mobile-menu { background: rgba(26,22,37,0.97); }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .hero-section { flex-direction: column; text-align: center; padding-top: 120px; }
+  .hero-cta, .hero-socials { justify-content: center; }
+  .hero-bio { margin: 0 auto 32px; }
+  .hero-visual { display: none; }
+  .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  .about-visual { max-width: 400px; margin: 0 auto; }
+  .skills-layout { grid-template-columns: repeat(2, 1fr); }
+  .projects-grid { grid-template-columns: repeat(2, 1fr); }
+  .certs-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .theme-toggle:not(.theme-toggle-mobile) { display: none; }
+
+  .hero-section {
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: left;
+    padding-top: 100px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  .hero-content { flex: 1 1 200px; }
+  .hero-visual {
+    display: flex !important;
+    flex: 0 0 130px;
+    justify-content: center;
+    align-items: center;
+  }
+  .hero-cta, .hero-socials { justify-content: flex-start; }
+  .hero-bio { margin: 0 0 20px; font-size: 0.9rem; }
+  .hero-name { font-size: clamp(1.8rem, 7vw, 2.8rem); }
+  .avatar-frame { width: 130px; height: 130px; }
+  .avatar-placeholder { width: 96px; height: 96px; }
+  .avatar-ring { display: none; }
+  .avatar-badge, .floating-tag { display: none; }
+  .scroll-hint { display: none; }
+
+  .timeline-line { display: none; }
+  .edu-card { width: 100%; margin-left: 0 !important; }
+  .edu-card-right .edu-dot, .edu-card-left .edu-dot { display: none; }
+  .skills-layout { grid-template-columns: 1fr; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .certs-grid { grid-template-columns: 1fr; }
+  .contact-layout { grid-template-columns: 1fr; }
+  .cursor, .cursor-follower { display: none; }
+  body { cursor: auto; }
+  .btn, .social-pill, .filter-btn, .hamburger { cursor: pointer; }
+}
+
+@media (max-width: 480px) {
+  .section { padding: 80px 0 60px; }
+  .hero-section { flex-direction: column; text-align: center; align-items: center; }
+  .hero-visual { display: flex !important; justify-content: center; margin-bottom: 8px; }
+  .hero-name { font-size: 2.2rem; }
+  .hero-cta { flex-direction: column; align-items: center; }
+  .hero-cta, .hero-socials { justify-content: center; }
+  .hero-bio { margin: 0 auto 20px; text-align: center; }
+  .avatar-frame { width: 120px; height: 120px; }
+  .avatar-placeholder { width: 88px; height: 88px; }
+}
